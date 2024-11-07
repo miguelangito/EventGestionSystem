@@ -1,0 +1,19 @@
+<%= form_with model: @event do |form|%>
+    
+    <div class="name_label" style="display: flex; flex-direction: column; width: 150px;">
+        <%= form.label :name%>
+        <%= form.text_field :name%>
+    </div>
+
+    <div class="description_label" style="display: flex; flex-direction: column; width: 150px;">
+        <%= form.label :description%>
+        <%= form.text_area :description%>
+    </div>
+
+    <div class="date_label" style="display: flex; flex-direction: column; width: 150px;">
+        <%= form.label :date%> 
+        <%= form.date_field :date%>
+    </div>
+
+    <%= form.submit%>
+<%end%>

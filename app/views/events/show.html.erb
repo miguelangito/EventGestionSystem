@@ -1,3 +1,8 @@
-<h2><%=@event.name%></h2>
-<h3><%=@event.date%></h3>
-<span><%=@event.description%></span>
+<div style="display: flex; flex-direction: column;">
+    <h2><%=@event.name%></h2>
+    <h3><%=@event.date%></h3>
+    <span><%=@event.description%></span>
+    <%= link_to update_event_path(@event.id) do%>
+        <button>Update</button>
+    <%end%>
+</div>

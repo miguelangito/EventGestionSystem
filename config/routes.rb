@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   get "events" => "events#index", as: :all_events
-  get "event/:id" => "events#show"
+  get "event/:id" => "events#show", as: :event
+  get "events/new", to: "events#new", as: :new_event
+  post "events" => "events#create"
+  patch "events/update/:id", to: "events#update", as: :update_event
   # Defines the root path route ("/")
   root "events#index"
 end

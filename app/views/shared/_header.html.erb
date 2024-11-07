@@ -1,3 +1,8 @@
-<%= link_to all_events_path do%>
-<h1>Events</h1>
-<%= end%>
+<div style="display: flex; flex-direction: row; align-items: center; justify-content: space-evenly; width: 20%">
+    <%= link_to all_events_path, style: "text-decoration: none; color: black" do %>
+    <h2>Events</h2>
+    <%end%>
+    <%= link_to new_event_path, style: "text-decoration: none; color: black" do %>
+    <h2>New event</h2>
+    <%end%>
+</div>
