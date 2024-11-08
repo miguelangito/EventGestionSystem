@@ -1,16 +1,25 @@
 <%= form_with model: @event do |form|%>
-    
-    <div class="name_label" style="display: flex; flex-direction: column; width: 150px;">
+    <% if @event.errors.any?%>
+        <div style="color: red;">
+            <h2><%= pluralize(@event.errors.count, "error")%> prohibited this event from being saved:</h2>
+            <ul>
+                <% @event.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+        </div>
+    <%end%>
+    <div class="name_label" style="display: flex; flex-direction: column; width: 250px;">
         <%= form.label :name%>
         <%= form.text_field :name%>
     </div>
 
-    <div class="description_label" style="display: flex; flex-direction: column; width: 150px;">
+    <div class="description_label" style="display: flex; flex-direction: column; width: 250px;">
         <%= form.label :description%>
         <%= form.text_area :description%>
     </div>
 
-    <div class="date_label" style="display: flex; flex-direction: column; width: 150px;">
+    <div class="date_label" style="display: flex; flex-direction: column; width: 250px;">
         <%= form.label :date%> 
         <%= form.date_field :date%>
     </div>

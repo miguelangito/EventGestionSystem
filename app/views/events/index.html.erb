@@ -2,8 +2,10 @@
     <h2 class="name"><%=event.name%></h2>
     <h3 class="date"><%=event.date%></h3>
     <span class="description"><%=event.description%></span>
+    <br>
+    <br>
     <%= link_to event_path(event.id) do %>
-        <span class="event">details</span>
+        <button class="event">details</button>
     <%end%>
     <hr>
 <%end%>

@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   get "event/:id" => "events#show", as: :event
   get "events/new", to: "events#new", as: :new_event
   post "events" => "events#create"
-  patch "events/update/:id", to: "events#update", as: :update_event
+  get "events/update/:id/edit", to: "events#edit", as: :edit_event
+  patch "event/:id", to: "events#update"
+  delete "event/:id", to: "events#delete", as: :delete_event
   # Defines the root path route ("/")
   root "events#index"
 end
